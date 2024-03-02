@@ -32,11 +32,13 @@ public class AggregationService {
                 battery.insights = new HashSet<>();
             }
 
-            battery.insights.addAll(dataInterpreter.status(rawData));
+            battery.addInsights(dataInterpreter.status(rawData));
 
             if (!battery.isPersistent()) {
                 battery.persist();
             }
+
+            rawData.processed = true;
         }
     }
 }

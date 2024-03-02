@@ -6,6 +6,7 @@ import co.inversity.bh.domain.RawDataPayload;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.enterprise.context.ApplicationScoped;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @ApplicationScoped
+@Slf4j
 public class DataInterpreter {
 
     private Map<Predicate<RawDataPayload>, String> rules = Map.of(
