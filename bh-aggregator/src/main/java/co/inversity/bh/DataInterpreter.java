@@ -33,6 +33,7 @@ public class DataInterpreter {
             return rules.entrySet().stream()
                     .filter(e -> e.getKey().test(rdp))
                     .map(Map.Entry::getValue)
+                    .peek(i -> log.info("Insight found: {}", i))
                     .collect(Collectors.toSet());
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);

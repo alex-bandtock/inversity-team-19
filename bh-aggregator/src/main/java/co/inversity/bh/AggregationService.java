@@ -22,6 +22,7 @@ public class AggregationService {
     @Transactional
     public void aggregate() {
         for (RawData rawData : RawData.unprocessed()) {
+            log.info("Aggregating RawData {}", rawData);
             Optional<Battery> batteryOpt = Battery.findBySerialNumber(rawData.serialNumber);
             Battery battery = batteryOpt.orElse(Battery.builder()
                     .serialNumber(rawData.serialNumber)
