@@ -10,9 +10,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Builder
@@ -21,9 +24,7 @@ import java.util.Set;
 public class Battery extends PanacheEntity {
     public String serialNumber;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "battery_insights")
-    public Set<String> insights;
+    public String insights;
 
     public static Optional<Battery> findBySerialNumber(String serialNumber) {
         return find("serialNumber", serialNumber).firstResultOptional();
@@ -32,8 +33,11 @@ public class Battery extends PanacheEntity {
     @Transactional
     public void addInsights(Set<String> insights) {
         if (this.insights == null) {
-            this.insights = new HashSet<>();
+            this.insights = String.join("|", insights);
+        } else {
+            Set<String> strs = new HashSet<>(List.of(this.insights.split("\\|")));
+            strs.addAll(insights);
+            this.insights = String.join("|", insights);
         }
-        this.insights.addAll(insights);
     }
 }

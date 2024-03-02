@@ -28,11 +28,6 @@ public class AggregationService {
                     .serialNumber(rawData.serialNumber)
                     .build());
 
-
-            if (battery.insights == null) {
-                battery.insights = new HashSet<>();
-            }
-
             battery.addInsights(dataInterpreter.status(rawData));
 
             if (!battery.isPersistent()) {
