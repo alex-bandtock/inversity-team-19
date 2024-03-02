@@ -1,0 +1,32 @@
+,,
+arduino nano,£4.90,
+sim module,£9.90,
+total data transfer,£23,
+Data storage,5.76,£0.02 per GB per month
+,,
+,,
+,,
+,£44.06,Total cost over life per unit
+,"£8,000",estimated cost of average car battery
+,"£4,000",estimated manufacture cost assuming a 100% markup
+,1.10,percent
+A total cost increase of approximatly 1%,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,750,characters
+,1,byte per character
+,750,bytes per message
+,,message every minute
+,525600,minutes in a year
+,8,years
+,3153600000,bytes over life
+,3007.507324,Mb
+,£8,per GB
+,£23,Total lifetime data transfer
