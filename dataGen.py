@@ -4,7 +4,7 @@ import json
 from datetime import datetime, timedelta
 
 cell_state = ['balanced', 'unbalanced']
-SNs = [f'BT{i:03d}' for i in range(1, 51)]
+SNs = [f'BT{i:03d}' for i in range(1, 51)]  # Generating 50 serial numbers
 
 # Dictionary to track SOC occurrences for each SN
 soc_counter = {sn: 0 for sn in SNs}
@@ -49,14 +49,17 @@ while True:
         
         # Construct JSON object
         battery_data = {
+            "time": datetime.now().isoformat(),
             "serialNumber": sn,
-            "soc": round(soc, 2),
-            "outputVoltage": round(output_voltage, 2),
-            "chargeRate": round(charge_rate, 2),
-            "temperature": round(temperature, 2),
-            "chargeCycles": charge_cycles[sn],
-            "cellBalance": cell_balance,
-            "batteryAge": battery_age_days
+            "payload": {
+                "soc": round(soc, 2),
+                "outputVoltage": round(output_voltage, 2),
+                "chargeRate": round(charge_rate, 2),
+                "temperature": round(temperature, 2),
+                "chargeCycles": charge_cycles[sn],
+                "cellBalance": cell_balance,
+                "batteryAge": battery_age_days
+            }
         }
         
         # Print battery data in JSON format
