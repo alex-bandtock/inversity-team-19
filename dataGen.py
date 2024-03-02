@@ -1,10 +1,11 @@
 import random
 import time
 import json
+import requests
 from datetime import datetime, timedelta
 
 cell_state = ['balanced', 'unbalanced']
-SNs = [f'BT{i:03d}' for i in range(1, 51)]
+SNs = [f'BT{i:03d}' for i in range(1, 51)]  # Generating 50 serial numbers
 
 # Dictionary to track SOC occurrences for each SN
 soc_counter = {sn: 0 for sn in SNs}
@@ -17,6 +18,9 @@ starting_soc = {sn: random.randrange(0, 99) for sn in SNs}
 
 # Dictionary to track random initial date for each SN
 random_dates = {sn: datetime.now() - timedelta(days=random.randint(1, 365*5)) for sn in SNs}
+
+# Endpoint URL
+url = "http://localhost:8080/ingest/v1/api"
 
 while True:
     for sn in SNs:
@@ -49,18 +53,30 @@ while True:
         
         # Construct JSON object
         battery_data = {
+            "time": datetime.now().isoformat(),
             "serialNumber": sn,
-            "soc": round(soc, 2),
-            "outputVoltage": round(output_voltage, 2),
-            "chargeRate": round(charge_rate, 2),
-            "temperature": round(temperature, 2),
-            "chargeCycles": charge_cycles[sn],
-            "cellBalance": cell_balance,
-            "batteryAge": battery_age_days
+            "payload": {
+                "soc": round(soc, 2),
+                "outputVoltage": round(output_voltage, 2),
+                "chargeRate": round(charge_rate, 2),
+                "temperature": round(temperature, 2),
+                "chargeCycles": charge_cycles[sn],
+                "cellBalance": cell_balance,
+                "batteryAge": battery_age_days
+            }
         }
         
-        # Print battery data in JSON format
-        print(json.dumps(battery_data, indent=4))
+        # Convert battery data to JSON
+        payload = json.dumps(battery_data)
+        
+        # Send POST request to the endpoint
+        response = requests.post(url, data=payload)
+        
+        # Check if the request was successful
+        if response.status_code == 200:
+            print("Data posted successfully!")
+        else:
+            print(f"Failed to post data. Status code: {response.status_code}")
         
         # Simulate time passing
-    time.sleep(60)
+        time.sleep(60)
