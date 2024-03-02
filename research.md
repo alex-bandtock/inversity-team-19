@@ -27,3 +27,11 @@ Git Repo to help with some of the problems our users face
 
 ### Current battery passport
 * From 1st February 2027, all EV and industrial batteries over 2 kWh sold into the EU market will require a unique battery passport retrievable using the unique product identifier in the form of a QR code.
+
+### Statista
+https://www.statista.com/statistics/883118/global-lithium-ion-battery-pack-costs/
+
+$139 per kWh for Li-ion
+
+Exemplar:
+MG ZS EV Long Range; 72.6kWh, so c. $10k., or £7900. Base vehicle price is £32995 making the battery about 25% of the cost of this new EV.
