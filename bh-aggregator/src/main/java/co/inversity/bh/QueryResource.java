@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Slf4j
-@Path("/bh/api/v1")
+@Path("/bh/v1/api")
 @Produces(MediaType.APPLICATION_JSON)
 public class QueryResource {
 
