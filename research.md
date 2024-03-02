@@ -9,3 +9,7 @@ Applies "AI" to this telemetry to evaluate battery health.
 ### Ideapad ACPI
 https://github.com/lebucur/ideapad-5-14are05
 This script will be useful to use as inspiration of possibilities
+
+### EV charging dashboard
+https://github.com/sap-labs-france/ev-dashboard
+Some possible could haves in the description of the Git
