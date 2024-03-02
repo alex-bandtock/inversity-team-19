@@ -1,5 +1,7 @@
 ## Nyobolt Battery Health Awareness Initiative
 
+### Consumers lack confidence in the long term usability and value of EVs, and specifically their batteries
+
 Nyobolt, a UK-based innovator in battery technology, faces a challenge in penetrating the market due to misconceptions about battery health among potential consumers. To address this, a focused initiative is required to:
 
 - **Track Battery Health:** Develop and implement advanced tools and technologies designed to monitor and report the health and longevity of Nyobolt batteries in real-time. This effort aims to provide transparent and accurate information about battery performance over its lifespan.
