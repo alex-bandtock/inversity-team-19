@@ -13,3 +13,10 @@ This script will be useful to use as inspiration of possibilities
 ### EV charging dashboard
 https://github.com/sap-labs-france/ev-dashboard
 Some possible could haves in the description of the Git
+
+### CSS framework
+if we are looking into a front-end app: https://materializecss.com/
+* sleek
+* easy to use
+* docs are up to date
+* some experience using it (Billy)
