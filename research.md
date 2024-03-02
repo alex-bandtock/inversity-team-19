@@ -24,3 +24,6 @@ if we are looking into a front-end app: https://materializecss.com/
 ### EvInfoAccess
 https://github.com/NeverFollow/EvInfoAccess
 Git Repo to help with some of the problems our users face
+
+### Current battery passport
+* From 1st February 2027, all EV and industrial batteries over 2 kWh sold into the EU market will require a unique battery passport retrievable using the unique product identifier in the form of a QR code.
