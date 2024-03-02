@@ -4,7 +4,6 @@ import json
 import requests
 from datetime import datetime, timedelta
 
-cell_state = ['balanced', 'unbalanced']
 SNs = [f'BT{i:03d}' for i in range(1, 51)]  # Generating 50 serial numbers
 
 # Dictionary to track SOC occurrences for each SN
@@ -38,7 +37,9 @@ while True:
         soc = max(0, min(99, soc))  # Ensure SOC remains within valid range
         
         # Randomly choose cell balance
-        cell_balance = random.choice(cell_state)
+        cell_balance_chance = random.randrange(0,100)
+        if cell_balance_chance < 10:
+            cell_balance = 'unbalanced'
         
         # Increment SOC occurrence counter
         soc_counter[sn] += 1
