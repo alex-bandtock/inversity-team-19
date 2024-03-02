@@ -55,7 +55,7 @@ while True:
         battery_data = {
             "time": datetime.now().isoformat(),
             "serialNumber": sn,
-            "payload": {
+            "payload": json.dumps({
                 "soc": round(soc, 2),
                 "outputVoltage": round(output_voltage, 2),
                 "chargeRate": round(charge_rate, 2),
@@ -63,14 +63,16 @@ while True:
                 "chargeCycles": charge_cycles[sn],
                 "cellBalance": cell_balance,
                 "batteryAge": battery_age_days
-            }
+            })
         }
-        
+
         # Convert battery data to JSON
         payload = json.dumps(battery_data)
-        
+
+        print(payload)
+
         # Send POST request to the endpoint
-        response = requests.post(url, data=payload)
+        response = requests.post(url, headers={'content-type': 'application/json'}, data=payload)
         
         # Check if the request was successful
         if response.status_code == 200:
@@ -78,5 +80,5 @@ while True:
         else:
             print(f"Failed to post data. Status code: {response.status_code}")
         
-        # Simulate time passing
-        time.sleep(60)
+    # Simulate time passing
+    time.sleep(60)

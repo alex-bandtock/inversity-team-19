@@ -1,4 +1,4 @@
-# **FlaskAPI**
+# **DataGen**
 
 Create Virtual-Environment
 
@@ -17,8 +17,6 @@ Activate Virtual-Environment for Windows
 ```
 .\venv\Scripts\activate
 ```
-
-
 
 Install Requirements.txt
 
