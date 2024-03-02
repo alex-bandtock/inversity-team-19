@@ -6,5 +6,5 @@ Nyobolt, a UK-based innovator in battery technology, faces a challenge in penetr
   
 - **Inform Consumers:** Create educational and engaging content specifically designed to inform potential consumers about how to track and interpret the health metrics of Nyobolt's batteries. This includes simplifying complex technical information into easily understandable formats, such as infographics, video tutorials, and interactive web platforms.
 
-The objective of this initiative is to demystify battery health for consumers, thereby increasing confidence in Nyobolt's revolutionary battery technology, encouraging adoption, and establishing Nyobolt as a trusted leader in the battery technology sector.
+The objective of this initiative is to demystify battery health for consumers, thereby increasing confidence in Nyobolt's revolutionary battery technology as well as instilling confidence in the second hand market, encouraging adoption, and establishing Nyobolt as a trusted leader in the battery technology sector.
 
